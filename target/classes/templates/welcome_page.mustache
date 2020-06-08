@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <div>
+        <a href="/userInfo">Войти</a>
+    </div>
+    <br/>
+    <div>
+        <form method="post">
+            <input type="text" name="name" placeholder="Введите имя"><br/>
+            <input type="text" name="lustName" placeholder="Введите фамилию"><br/>
+            <input type="text" name="email" placeholder="E-mail"><br/>
+            <input type="text" name="city" placeholder="Город"><br/>
+            <input type="date" name="birthDay" placeholder="Дата Рождения"><br/>
+            <input type="text" name="password" placeholder="Пароль"><br/>
+            <input type="hidden" name="_csrf" value="{{ _csrf.token }}"/>
+            <button type="submit">Добавить</button>
+        </form>
+    </div>
+    <br/>
+    {{#users}}
+        <div>
+            <span>{{name}}</span>
+            <span>{{lustName}}</span>
+            <span>{{email}}</span>
+            <span>{{city}}</span>
+            <span>{{birthDay}}</span>
+            <span>{{password}}</span>
+        </div>
+    {{/users}}
+</body>
+</html>

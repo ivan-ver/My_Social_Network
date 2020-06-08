@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>main</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <div>
+        <form action="/logout" method="post">
+            <input type="submit" value="Sign Out"/>
+            <input type="hidden" name="_csrf" value="{{ _csrf.token }}"/>
+        </form>
+    </div>
+    <br/>
+    <H1>Users</H1>
+    {{#persons}}
+        <div>
+            <a href="get/{{id}}">{{ id }}</a>
+            <span>{{name}}</span>
+            <span>{{lustName}}</span>
+            <span>{{email}}</span>
+            <span>{{city}}</span>
+            <span>{{birthDay}}</span>
+            <span>{{password}}</span>
+        </div>
+    {{/persons}}
+</body>
+</html>
